@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" href="style.css">
+    <title>Collection</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Add a Collectible</h1>
+	<div>
+		<form th:object="${collectible}" th:action="@{/savecollectible}" action="#" method="post">
+		  	<label for="collectible">Collectible Name</label>
+			<input type="text" id="Collectible" th:field="*{collectibleName}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="amount">Amount</label>
+			<input type="text" id="Amount" th:field="*{amount}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+		  	<label for="description">Description</label>
+			<input type="text" id="Description" th:field="*{description}" />
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<label for="collist">Category</label>
+			<select id="collist" th:field="*{category}">
+       			<option th:each="category: ${categories}" th:value="${category.categoryId}" th:text="${category.categoryName}"></option>
+    		</select>
+			<input class="center1" type="submit" value="Save"></input>
+			<!-- Lisää kirjalle syöttökenttiä -->
+		</form>
+    <form action="/addcategory">
+    <input class="center1" type="submit" value="Add a Category" />
+	</form>
+	</div>
+</body>
+</html>

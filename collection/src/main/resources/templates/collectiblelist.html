@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>collection</title>
+</head>
+<body>
+    <h1>Collection</h1>
+    	<div class="col-md-4">
+		<h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
+	</div>
+	<div class="col-md-4" style="padding:20px 0">
+		<form th:action="@{/logout}" method="post">
+			<input class="center1" type="submit" value="Sign Out"/>
+		</form>
+	</div> 
+    <table class="center">
+    	<tr>
+    		<th>Category</th>
+    		<th>Item</th>
+    		<th>Description</th>
+    		<th>Amount</th>
+    	</tr>
+    	<tr class="center" th:each = "collectible : ${collectibles}">
+    		<td th:text=${collectible.category.categoryName}></td>
+    		<td th:text=${collectible.collectibleName}></td>
+    		<td th:text=${collectible.description}></td>
+    		<td th:text=${collectible.amount}></td>
+    		<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${collectible.id})}" class="btn btn-xs btn-danger">Delete</a></td>
+    	</tr>
+    </table>
+    <form action="/addcollectible">
+    <input class="center1" type="submit" value="Add a Collectible" />
+	</form>
+</body>
+</html>

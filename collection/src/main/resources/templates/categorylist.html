@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kategoria lista</h1>
+    <table class="center">
+    	<tr>
+    		<th>ID</th>
+    		<th>Nimi</th>
+    	</tr>
+	    <tr th:each = "category : ${categories}">
+	    	<td th:text=${category.categoryId}></td>
+	    	<td th:text=${category.categoryName}></td>
+    	</tr>
+    </table>
+    <form action="/addcategory">
+    <input class="center1" type="submit" value="Add a Category" />
+	</form>
+    <form action="/collectiblelist">
+    <input class="center1" type="submit" value="Back to collection" />
+	</form>	
+</body>
+</html>

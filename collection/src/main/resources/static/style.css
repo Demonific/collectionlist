@@ -1,0 +1,56 @@
+input[type=text], select {
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 40px;
+}
+
+.center1 {
+  background-color: #6f55af;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin: 8px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type=submit]:hover {
+  background-color: #483674; 
+  text-align: center;
+}
+
+body {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+.center{
+	margin-left: auto;
+	margin-right: auto;
+}
+table{
+	background-color: white;
+	padding: 30px;
+	border-radius: 25px;
+	border: 1px solid black;
+}
+table, th {
+  border: 1px solid black;
+}
+table, tr {
+	background-color: lightblue;
+	border: 1px solid black;
+}
